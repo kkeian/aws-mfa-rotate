@@ -13,14 +13,14 @@ Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 [profile accountName]
 aws_access_key_id = [keyId]
 aws_secret_access_key = [secretKey]
-region=[regionHere]
+region = [regionHere]
 
 [profile accountNamemfa]
 aws_access_key_id = [randomDummyValue]
 aws_secret_access_key = [randomDummyValue]
-aws_session_token=[randomDummyValue]
-mfa_serial=[MfaArn]
-region=[regionHere]
+aws_session_token = [randomDummyValue]
+mfa_serial = [MfaArn]
+region = [regionHere]
 ```
 
 - .aws/credentials file
@@ -29,8 +29,8 @@ region=[regionHere]
 ```ini
 [accountNamemfa]
 aws_access_key_id = [randomDummyValue]
-aws_secret_access_key=[randomDummyValue]
-aws_session_token=[randomDummyValue]
+aws_secret_access_key = [randomDummyValue]
+aws_session_token = [randomDummyValue]
 ```
 
 ### How it works:
