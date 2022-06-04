@@ -16,7 +16,7 @@ function getMFASerial(profile) {
     return credFile[mfaProfile].mfa_serial;
 }
 
-export async function rotateMFA(profile, mfaCode) {
+export async function rotateMFA(profile, mfaCode, sessionDuration) {
     const mfaSerial = getMFASerial(profile);
     // Get IAM creds (non-MFA) to renew session token.
     const clientSTS = new STSClient({
@@ -30,7 +30,8 @@ export async function rotateMFA(profile, mfaCode) {
     // session credentials.
     const command = new GetSessionTokenCommand({
         SerialNumber: mfaSerial,
-        TokenCode: mfaCode
+        TokenCode: mfaCode,
+        DurationSeconds: sessionDuration
     });
     // Send request to get MFA session credentials.
     try {
