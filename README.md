@@ -1,6 +1,20 @@
 # aws-mfa-rotate
 Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 
+## Pre-requisites:
+1. npm installed.
+2. node version 14.
+3. AWS CLI installed with configuration files setup [see](#Expected .aws files format)
+
+## Installation:
+`npm i -g @kkeian/aws-mfa-rotate`
+
+## Example usage:
+> Rotate MFA credentials for genericprofilename. Expire credentials after 1 hour.
+`aws-mfa rotate -p genericprofilename -t 138239 -d 1`
+> Rotate MFA credentials for genericprofilename. Expire credentials after default 12 hours.
+`aws-mfa rotate -p genericprofilename -t 138239`
+
 ## General structure
 - src: holds main logic of program.
 - bin: holds command line interface configuration.

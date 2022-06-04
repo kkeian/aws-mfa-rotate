@@ -9,15 +9,16 @@ program
     .description("rotates MFA credentials used to authenticate AWS API calls")
     .requiredOption("-t|--token <number>", "token PIN from MFA device")
     .requiredOption("-p|--profile <string>", "name of non-MFA profile listed in .aws/config file")
+    .option("-d|--duration <number>", "duration for temporary credentials to last, in hours")
     .action(async (options) => {
         const secPerHr = 60*60;
         const defaultSessionDurationHrs = 12
-        
+
         const mfaToken = options.token;
         const profile = options.profile;
         let duration = secPerHr*defaultSessionDurationHrs;
         if (typeof options.duration !== "undefined") {
-            duration = options.duration;
+            duration = options.duration * secPerHr;
         }
         try {
             const tempCreds = await rotateMFA(profile, mfaToken, duration);
