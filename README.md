@@ -2,17 +2,17 @@
 
 Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 
-## Pre-requisites:
-
 ---
+
+## Installation
+
+### Pre-requisites:
 
 1. npm installed.
 2. node version 14.
-3. AWS CLI installed with configuration files setup [see](#Expected .aws files format)
+3. AWS CLI installed with configuration files setup [see](#Expected-.aws-files-format)
 
-## Installation:
-
----
+### Install command:
 
 `npm i -g @kkeian/aws-mfa-rotate`
 
@@ -25,16 +25,9 @@ Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 
 `aws-mfa rotate -p genericprofilename -t 138239`
 
-## General project structure
-
 ---
-
-- src: holds main logic of program.
-- bin: holds command line interface configuration.
 
 ## Expected .aws files format:
-
----
 
 - .aws/config file:
     > Should have at least 2 entries for the account used for MFA:
@@ -86,6 +79,9 @@ aws_session_token = [randomDummyValue]
 
 ### Contributing
 
----
+#### General project structure:
+
+- src: holds main logic of program.
+- bin: holds command line interface configuration.
 
 Feel free to submit PR with improvements. This is a hobby project only managed by me so don't expect a quick turnaround.
