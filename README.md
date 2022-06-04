@@ -8,23 +8,29 @@ Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 ## Expected .aws files format:
 - .aws/config file:
     > Should have at least 2 entries for the account used for MFA:
-    [profile accountName]
-    aws_access_key_id = <keyId>
-    aws_secret_access_key = <secretKey>
-    region=<regionHere>
-    [profile accountNamemfa]
-    aws_access_key_id = <randomDummyValue like 1>
-    aws_secret_access_key = <randomDummyValue like 1>
-    aws_session_token=<randomDummyValue like 11348713>
-    mfa_serial=<MfaArn for IAM user configured under accountName>
-    region=<regionHere>
+
+```
+[profile accountName]
+aws_access_key_id = [keyId]
+aws_secret_access_key = [secretKey]
+region=[regionHere]
+[profile accountNamemfa]
+aws_access_key_id = [randomDummyValue]
+aws_secret_access_key = [randomDummyValue]
+aws_session_token=[randomDummyValue]
+mfa_serial=[MfaArn]
+region=[regionHere]
+```
 
 - .aws/credentials file
     > should have at least 1 entry
-    [accountNamemfa]
-    aws_access_key_id = <randomDummyValue like 1>
-    aws_secret_access_key=<randomDummyValue like 1>
-    aws_session_token=<randomDummyValue like 11348713>
+    
+```
+[accountNamemfa]
+aws_access_key_id = [randomDummyValue]
+aws_secret_access_key=[randomDummyValue]
+aws_session_token=[randomDummyValue]
+```
 
 ### How it works:
 1. AWS access key pair is used to authenticate with AWS STS service.
