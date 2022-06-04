@@ -1,7 +1,7 @@
 {
   "name": "@kkeian/aws-mfa-rotate",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "JavaScript to increase ease of rotating AWS temporary credentials used to authenticate CLI/SDK with MFA",
   "main": "./bin/rotate-mfa.js",
   "scripts": {
