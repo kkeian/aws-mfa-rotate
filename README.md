@@ -10,7 +10,7 @@ Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 
 1. npm installed.
 2. node version 14.
-3. AWS CLI installed with configuration files setup [see](#Expected-.aws-files-format)
+3. AWS CLI installed with configuration files setup [see](#Expected-aws-files-format)
 
 ### Install command:
 
