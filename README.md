@@ -9,7 +9,7 @@ Simple CLI tool to rotate AWS CLI/SDK temporary credentials.
 - .aws/config file:
     > Should have at least 2 entries for the account used for MFA:
 
-```
+```ini
 [profile accountName]
 aws_access_key_id = [keyId]
 aws_secret_access_key = [secretKey]
@@ -26,7 +26,7 @@ region=[regionHere]
 - .aws/credentials file
     > should have at least 1 entry
 
-```
+```ini
 [accountNamemfa]
 aws_access_key_id = [randomDummyValue]
 aws_secret_access_key=[randomDummyValue]
