@@ -24,7 +24,7 @@ region = [regionHere]
 ```
 
 - .aws/credentials file
-    > should have at least 1 entry
+    > Should have at least 1 entry:
 
 ```ini
 [accountNamemfa]
